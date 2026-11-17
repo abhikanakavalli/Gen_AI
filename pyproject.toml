@@ -19,9 +19,10 @@ dependencies = [
 ]
 
 
-[build-system]
-requires = ["uv_build>=0.12.22,<0.13.0"]
-build-backend = "uv_build"
+[tool.uv]
+# The repo root is only a workspace container (real code lives in app/api and
+# app/chatbot-ui). There is no root package to install, so treat it as virtual.
+package = false
 
 [tool.uv.workspace]
 members = [
